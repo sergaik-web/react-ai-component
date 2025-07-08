@@ -1,5 +1,14 @@
 import React, { ReactNode, ReactElement, useEffect, useState } from 'react';
 
+const aiComponent = {
+  settings: (config: { token: string; mainContext: string }) => {
+    aiComponent.token = config.token;
+    aiComponent.mainContext = config.mainContext || '';
+  },
+  token: '',
+  mainContext: '',
+};
+
 interface AIComponentProps {
   context: string;
   children: ReactElement | ReactElement[];
